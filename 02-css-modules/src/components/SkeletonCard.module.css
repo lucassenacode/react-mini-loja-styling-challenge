@@ -1,0 +1,72 @@
+.productCard {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContent {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Estilos específicos do Skeleton */
+.skeletonImage, .skeletonLine {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+:root[data-theme="dark"] .skeletonImage,
+:root[data-theme="dark"] .skeletonLine {
+  background-color: #2a2a2a; /* Cor do skeleton no tema escuro */
+}
+
+/* Animação de brilho (shimmer) */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+:root[data-theme="dark"] .skeleton::after {
+   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+@keyframes shimmer {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+
+/* Dimensões dos placeholders */
+.skeletonImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.skeletonLine {
+  height: 1em;
+  margin-bottom: 10px;
+}
+
+.skeletonTitle { width: 80%; }
+.skeletonPrice { width: 50%; }
+.skeletonRating { width: 30%; }
+.skeletonButton {
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: 0; /* Ajuste para alinhar com o card real */
+}

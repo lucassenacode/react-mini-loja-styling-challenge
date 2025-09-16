@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--card-bg-color);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s;
+}
+
+.logo {
+  /* Adicionado para herdar a cor do body */
+  color: var(--text-color);
+}
+
+.navbarRightSide { 
+  display: flex; 
+  align-items: center; 
+  gap: 20px; 
+}
+
+.themeToggleBtn { 
+  background: none; 
+  border: none; 
+  font-size: 1.5rem; 
+  cursor: pointer; 
+  color: var(--text-color); 
+}

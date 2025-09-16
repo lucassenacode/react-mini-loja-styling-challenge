@@ -1,0 +1,30 @@
+.productGrid {
+  display: grid;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+  
+  /* Padrão para telas grandes (>= 1025px): 4 colunas */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Telas de 769px a 1024px: 3 colunas */
+@media (max-width: 1024px) {
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Telas de 481px a 768px: 2 colunas */
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Telas de até 480px: 1 coluna */
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+}
