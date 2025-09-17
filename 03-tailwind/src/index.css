@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* ===== Tokens light/dark por CSS vars ===== */
+:root {
+  --bg: #f4f7f6;
+  --card: #ffffff;
+  --text: #333333;
+  --primary: #0077cc;
+  --border: #eeeeee;
+  --shadow: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-hover: 0 8px 16px rgba(0,0,0,0.16);
+}
+:root.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #e0e0e0;
+  --primary: #3498db;
+  --border: #333333;
+  --shadow: 0 4px 8px rgba(0,0,0,0.4);
+  --shadow-hover: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+/* ===== Breakpoints custom (v4 usa @theme) ===== */
+@theme {
+  --breakpoint-xs: 481px;
+  --breakpoint-md: 769px;
+  --breakpoint-lg: 1025px;
+}
+
+/* Base */
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color .3s, color .3s;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial;
+}
+
+/* Skeleton helpers */
+.skeleton { position: relative; overflow: hidden; background: var(--card); }
+.skeleton-line { background: #e0e0e0; border-radius: .25rem; }
+.skeleton-shimmer::after{
+  content:""; position:absolute; inset:0; transform: translateX(-150%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+:root.dark .skeleton-shimmer::after{
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+}
+@keyframes shimmer { from {transform:translateX(-150%)} to {transform:translateX(150%)} }
+
+:root { --tw-font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { font-family: var(--tw-font-sans); }
