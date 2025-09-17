@@ -101,7 +101,7 @@ main { padding: 20px; }
   color: white;
 }
 
-.product-tag.new { background-color: #27ae60; } /* Verde para "Novo" */
+.product-tag.novo { background-color: #27ae60; } /* Verde para "Novo" */
 .product-tag.promo { background-color: #e67e22; } /* Laranja para "Promo" */
 
 .card-content { 
